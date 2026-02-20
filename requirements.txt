@@ -1,0 +1,53 @@
+Django>=5.0,<6.0                # versi django terbaru
+djangorestframework>=3.15.0             # framework django
+djangorestframework-simplejwt>=5.3.1  # Untuk autentikasi API
+django-cors-headers>=4.3.1            # Menangani akses dari Frontend
+django-filter>=23.5                   # Memudahkan pencarian/filter data
+drf-spectacular>=0.27.2                # Dokumentasi API (Swagger/OpenAPI)
+psycopg2-binary>=2.9.9                # Konektor Database PostgreSQL
+python-dotenv                  # Mengelola variabel lingkungan/secret key
+pandas                         # Memproses data laporan/payroll
+django-cleanup                 # Otomatis menghapus file media lama
+django-environ>=0.11.2
+Pillow>=10.2.0
+celery>=5.3.6
+redis>=5.0.1
+whitenoise>=6.6.0
+gunicorn>=21.2.0
+python-dateutil>=2.9.0.post0
+openpyxl>=3.1.2
+reportlab>=4.1.0
+django-auditlog>=3.0.0
+pytest>=8.0.0
+pytest-django>=4.8.0
+factory-boy>=3.3.0
+black>=24.1.1
+isort>=5.13.2
+flake8>=7.0.0
+
+### Penjelasan singkat fungsi library penting:
+
+# Django + DRF → bikin REST API
+
+# SimpleJWT → login token access/refresh
+
+# psycopg2 → PostgreSQL driver
+
+# django-environ → env config .env
+
+# cors headers → supaya frontend bisa akses API
+
+# drf-spectacular → Swagger UI / OpenAPI
+
+# Celery + Redis → background task (contoh: generate payroll slip, kirim email, export)
+
+# django-filter → filter data via query params
+
+# auditlog → catat perubahan data penting (HRIS butuh)
+
+# openpyxl/reportlab → export excel & pdf
+
+# pytest stack → testing
+
+# black/isort/flake8 → code style
+###
