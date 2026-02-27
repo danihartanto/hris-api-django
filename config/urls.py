@@ -14,9 +14,10 @@ urlpatterns = [
     path("api/accounts/", include("apps.accounts.urls")),
     path("api/employees/", include("apps.employees.urls")),
     path("api/", include("apps.employees.urls")),
-    path("api/", include("apps.attendance.urls")),
+    path("api/attendance/", include("apps.attendance.urls")),
     path("api/leave/", include("apps.leave.urls")),
     path("api/payroll/", include("apps.payroll.urls")),
+    path("api/device/", include("apps.employee_devices.urls")),
     
 ]
 

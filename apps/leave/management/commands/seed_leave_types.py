@@ -13,7 +13,7 @@ class Command(BaseCommand):
         ]
 
         for code, name, desc in data:
-            obj, created = LeaveType.objects.get_or_create(
+            created = LeaveType.objects.get_or_create(
                 code=code,
                 defaults={
                     "name": name,

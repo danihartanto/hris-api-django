@@ -30,6 +30,7 @@ class LeaveRequestSerializer(serializers.ModelSerializer):
             "leave_type_name",
             "start_date",
             "end_date",
+            "return_date",
             "total_days",
             "reason",
             "attachment",
@@ -60,6 +61,7 @@ class LeaveRequestCreateSerializer(serializers.Serializer):
     leave_type = serializers.IntegerField()
     start_date = serializers.DateField()
     end_date = serializers.DateField()
+    return_date = serializers.DateField()
     reason = serializers.CharField(required=False, allow_blank=True, allow_null=True)
 
     def validate(self, attrs):
@@ -75,9 +77,12 @@ class LeaveRequestCreateSerializer(serializers.Serializer):
 
         start_date = attrs["start_date"]
         end_date = attrs["end_date"]
+        return_date = attrs["return_date"]
 
         if end_date < start_date:
             raise serializers.ValidationError("end_date tidak boleh lebih kecil dari start_date.")
+        if return_date <= end_date:
+            raise serializers.ValidationError("return_date tidak boleh lebih kecil dari end_date.")
 
         total_days = count_days_inclusive(start_date, end_date)
 
@@ -146,6 +151,7 @@ class LeaveRequestCreateSerializer(serializers.Serializer):
             leave_type=leave_type,
             start_date=validated_data["start_date"],
             end_date=validated_data["end_date"],
+            return_date=validated_data["return_date"],
             total_days=validated_data["total_days"],
             reason=validated_data.get("reason"),
             status="pending",

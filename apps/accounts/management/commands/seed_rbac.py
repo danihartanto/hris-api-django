@@ -127,6 +127,9 @@ class Command(BaseCommand):
             "payroll.view",
             "reports.view",
             "reports.export",
+            "leave.view_all",
+            "leave.create",
+            "attendance.view_all"
         ]
         assign_permissions("Manager", manager_perms)
 
@@ -138,6 +141,7 @@ class Command(BaseCommand):
             "attendance.checkout",
             "leave.view",
             "leave.create",
+            "attendance.create"
         ]
         assign_permissions("Employee", employee_perms)
 

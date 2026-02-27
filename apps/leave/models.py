@@ -38,6 +38,7 @@ class LeaveRequest(models.Model):
 
     start_date = models.DateField()
     end_date = models.DateField()
+    return_date = models.DateField(null=True, blank=True)
 
     total_days = models.PositiveIntegerField(default=1)
     reason = models.TextField(null=True, blank=True)

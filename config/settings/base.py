@@ -55,6 +55,7 @@ LOCAL_APPS = [
     "apps.payroll",
     "apps.reports",
     "apps.documents",
+    "apps.employee_devices",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -181,7 +182,7 @@ REST_FRAMEWORK = {
 # JWT (SimpleJWT)
 # ============================================================
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=230),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,

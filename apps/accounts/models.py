@@ -58,6 +58,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def has_permission(self, perm_code: str) -> bool:
         return perm_code in self.get_permissions()
+    
+def user_has_permission(user, perm_code: str):
+    if user.is_superuser:
+        return True
+
+    role = getattr(user, "role", None)
+    if not role:
+        return False
+
+    return role.permissions.filter(code=perm_code).exists()
 
 class Role(models.Model):
     name = models.CharField(max_length=50, unique=True)

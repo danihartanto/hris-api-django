@@ -24,6 +24,7 @@ class LeaveRequestAdmin(admin.ModelAdmin):
         "leave_type",
         "start_date",
         "end_date",
+        "return_date",
         "total_days",
         "status",
         "approved_by_name",
@@ -36,6 +37,7 @@ class LeaveRequestAdmin(admin.ModelAdmin):
         "leave_type",
         "start_date",
         "end_date",
+        "return_date",
         "created_at",
     )
 
@@ -59,7 +61,7 @@ class LeaveRequestAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ("Employee", {"fields": ("employee", "leave_type")}),
-        ("Leave Date", {"fields": ("start_date", "end_date", "total_days")}),
+        ("Leave Date", {"fields": ("start_date", "end_date","return_date", "total_days")}),
         ("Request Info", {"fields": ("reason", "attachment")}),
         ("Status", {"fields": ("status",)}),
         ("Approval / Rejection", {"fields": ("approved_by", "approved_at", "rejected_by", "rejected_at", "rejection_reason")}),
