@@ -9,6 +9,11 @@ $ git clone https://github.com/danihartanto/hris-api-django.git
 $ cd hris-api-django
 ```
 
+To run server:
+```
+python manage.py runserver 10.2.15.186:8000
+```
+
 Create a virtual environment to install dependencies in and activate it:
 
 ```sh
